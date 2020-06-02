@@ -1,2 +1,2 @@
 # simple-kkm-app
-[Link do strony](simple-kkm.herokuapp.com)
+[Link do strony](http://simple-kkm.herokuapp.com)
