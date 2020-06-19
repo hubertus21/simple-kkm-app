@@ -50,7 +50,7 @@ class DepractionCheck extends React.Component {
     <div className="w3-container" style={{'margin-top':'75px'}}>
       <h1 className="w3-xxxlarge w3-text-teal"><b>Czy twoja kkm-ka jest do wymiany?</b></h1>
       <hr style={{width:'50px',border:'5px solid teal'}} className="w3-round"/>
-      <p>Wpisz numer swojej KKMki do pola poniżej i sprawdź czy ZTP uważa, że twoja KKMka jest do wyrzucenia.</p>
+      <p>Wpisz numer swojej KKMki do pola poniżej i sprawdź czy ZTP uważa, że twoja KKMka jest do wyrzucenia. </p>
       <TicketsHistoryDownloader isWaiting={this.setWait} hasNoTickets={hasNoTickets} onTicketsHistoryChange={this.changeTicketsHistory}/>
       {infoBar}
     </div>

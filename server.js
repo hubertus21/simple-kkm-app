@@ -42,17 +42,8 @@ app.use(bodyParser.json());
   };
   app.get('/api/history/:kkmNumber', function (req, res) {
     const kkmNumber = req.params.kkmNumber;
-    axios.get('http://mpk.krakow.pl/pl/sprawdz-waznosc-biletu/index,1.html',{
-      params : {
-        cityCardType : 0,
-        dateValidity : '2010-01-01',
-        identityNumber : '',
-        cityCardNumber : kkmNumber,
-        sprawdz_kkm : 'Sprawd%C5%BA'
-      }
-    }).then((rsp) => {
-        let txtResponse = rsp.data;
-        /*let year = Math.floor(Math.random()*3) + 2013;
+    if(kkmNumber === 'random'){
+      let year = Math.floor(Math.random()*3) + 2013;
         if(year === 2014){
           res.send({tickets : []});
         }else{
@@ -63,7 +54,21 @@ app.use(bodyParser.json());
             startDate : new Date(2012,2,2),
             endDate : new Date(2012,2,3)
           }]});
-        }*/
+        }
+        return
+    }
+
+
+    axios.get('http://mpk.krakow.pl/pl/sprawdz-waznosc-biletu/index,1.html',{
+      params : {
+        cityCardType : 0,
+        dateValidity : '2010-01-01',
+        identityNumber : '',
+        cityCardNumber : kkmNumber,
+        sprawdz_kkm : 'Sprawd%C5%BA'
+      }
+    }).then((rsp) => {
+        let txtResponse = rsp.data;
         res.send({tickets : parseTicketHistory(txtResponse)});
         
       }).catch((err) => {

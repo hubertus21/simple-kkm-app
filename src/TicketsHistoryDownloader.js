@@ -32,7 +32,7 @@ class TicketsHistoryDownloader extends React.Component {
     let errDisplayAlert = this.props.hasNoTickets != null && this.props.hasNoTickets && !waiting ? "block" : "none";
     return (
     <form className="w3-container" onSubmit={this.handleSubmit}>
-        <label className="w3-text-teal"><b>Nr KKM - prawdopodobnie 11 znakowy</b></label>
+        <label className="w3-text-teal"><b>Nr KKM - prawdopodobnie 11 znakowy.</b> Wpisz random, żeby wylosować odpowiedź, a najprostszym prawdziwym numerem jest 1</label>
         <input className="w3-input w3-border w3-light-grey" value={this.state.value} onChange={this.handleChange} type="text"/>
         <button className="w3-button w3-block w3-teal w3-hover-green" id="submitBtn">{submitBtnTxt}</button>
         <div className="w3-panel w3-blue w3-animate-top" id="alertSent" style={{display : infoDisplayAlert}}>
